@@ -1,16 +1,18 @@
 function displayRoadtripPlan(response) {
     // response.data.answer
     new Typewriter("#roadtrip-planer", {
-        strings: response.data.answer.trim().replace('```html', ''),
+        strings: response.data.answer.trim().replace('```', '').replace('html', '').replace('```', ''),
         autoStart: true,
         cursor: null,
         delay: 20,
-
     });
 }
 
+
+
 function roadtripGenerator(event) {
     event.preventDefault();
+    document.getElementById("submit-button").setAttribute("disabled", true);
 
     let departure = document.querySelector("#departure");
     let destination = document.querySelector("#destination");
@@ -35,11 +37,16 @@ Make it easy to read and exciting for travelers!
     let roadtirpPlanner = document.querySelector("#roadtrip-planer");      
     roadtirpPlanner.style.display = "block";
 
-    axios.get(apiUrl).then(displayRoadtripPlan);
+    axios.get(apiUrl)
+        .then(displayRoadtripPlan)
+        .finally(() => {
+            document.getElementById("submit-button").removeAttribute("disabled");
+        });
 
 }
 
 let roadtripFormElement = document.querySelector("#roadtrip-planer-form");
 roadtripFormElement.addEventListener("submit", roadtripGenerator);
+
 
 
