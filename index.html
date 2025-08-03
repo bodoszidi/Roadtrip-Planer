@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/index.css" />
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Inconsolata"
+        />
+    <title>Roadtrip Planner</title>
+    
+</head>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Roadtrip Planner</h1>
+            </header>
+
+            <main>
+                <form id="roadtrip-planner-form">
+                    <input
+                        type="text"
+                        placeholder="Enter departure"
+                        autofocus
+                        required
+                        id="departure"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Enter destination"
+                        autofocus
+                        required
+                        id="destination"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Duration"
+                        autofocus
+                        required
+                        id="duration"
+                    />
+                    <input type="submit" id="submit-button" />
+                   
+                </form>
+                 <div class="roadtrip-planner" , id="roadtrip-planner"></div>
+            </main>
+
+            <footer>
+                This project was coded by
+                <a href="https://github.com/bodoszidi" target="_blank"
+                    >Szidonia Bodo</a
+                >, it is
+                <a
+                    href="https://github.com/bodoszidi/stand-up-lines-generator"
+                    target="_blank"
+                >
+                    open source on GitHub</a
+                >, and hosted on
+                <a
+                    href=""
+                    target="_blank"
+                >
+                    Netlify</a
+                >.
+            </footer>
+        </div>
+        <script src="./src/index.js"></script>
+</body>
+</html>
