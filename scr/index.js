@@ -8,6 +8,9 @@ function displayRoadtripPlan(response) {
     });
 }
 
+
+
+
 function roadtripGenerator(event) {
     event.preventDefault();
 
@@ -32,6 +35,7 @@ Make it easy to read and exciting for travelers!
 
     let roadtirpPlanner = document.querySelector("#roadtrip-planer");      
     roadtirpPlanner.style.display = "block";
+    roadtripPlanner.innerHTML = "Planning your dream road trip... ⏳";
 
     axios.get(apiUrl).then(displayRoadtripPlan);
 
