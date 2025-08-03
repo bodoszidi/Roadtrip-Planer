@@ -1,7 +1,7 @@
 function displayRoadtripPlan(response) {
     // response.data.answer
     new Typewriter("#roadtrip-planer", {
-        strings: response.data.answer.trim(),
+        strings: response.data.answer.trim().replace('```html', ''),
         autoStart: true,
         cursor: null,
         delay: 20,
@@ -26,6 +26,7 @@ Include:
 - A mix of adventure and relaxation 
 Use a cheerful tone, include emojis, and keep it short and structurize in lines to make it readable (under 15 lines). 
 Make it easy to read and exciting for travelers!
+- output in html format, so I can use it to render on the page. only use h2, h3, h4, p and ul list html elements.
 `;
     let context =
        "You are a well-traveled road trip organizer with amazing insights and creative travel ideas, by showing ideal places to stay overnight, and local tips."
