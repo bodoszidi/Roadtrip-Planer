@@ -1,6 +1,6 @@
 function displayRoadtripPlan(response) {
     // response.data.anwer
-    new Typewriter("#roadtrip-planner", {
+    new Typewriter("#roadtrip-planer", {
         strings: response.data.answer,
         autoStart: true,
         cursor: null,
@@ -20,14 +20,14 @@ function roadtripGenerator(event) {
        "You are a well-traveled road trip organizer with amazing insights and creative travel ideas, by showing ideal places to stay overnight, and local tips."
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-    let roadtirpPlanner = document.querySelector("#roadtrip-planner");      
+    let roadtirpPlanner = document.querySelector("#roadtrip-planer");      
     roadtirpPlanner.style.display = "block";
 
     axios.get(apiUrl).then(displayRoadtripPlan);
 
 }
 
-let roadtripFormElement = document.querySelector("#roadtrip-planner-form");
+let roadtripFormElement = document.querySelector("#roadtrip-planer-form");
 roadtripFormElement.addEventListener("submit", roadtripGenerator);
 
 
