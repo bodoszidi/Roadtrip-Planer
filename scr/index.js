@@ -1,15 +1,13 @@
 function displayRoadtripPlan(response) {
-    // response.data.anwer
+    // response.data.answer
     new Typewriter("#roadtrip-planer", {
         strings: response.data.answer.trim(),
         autoStart: true,
         cursor: null,
         delay: 20,
+
     });
 }
-
-
-
 
 function roadtripGenerator(event) {
     event.preventDefault();
@@ -21,12 +19,12 @@ function roadtripGenerator(event) {
    let prompt = `
 Plan a fun and inspiring road trip from ${departure.value} to ${destination.value} lasting ${duration.value} days. 
 Include:
-- Must-see stops along the route 🚗🗺️
-- Local tips and hidden gems 🌟
-- Where to stay overnight 🛌
-- Estimated daily costs with local currency 💰
-- A mix of adventure and relaxation 🏞️🌆
-Use a cheerful tone, include emojis, and keep it short (under 15 lines). 
+- Must-see stops along the route 
+- Local tips and hidden gems 
+- Where to stay overnight 
+- Estimated daily costs with local currency 
+- A mix of adventure and relaxation 
+Use a cheerful tone, include emojis, and keep it short and structurize in lines to make it readable (under 15 lines). 
 Make it easy to read and exciting for travelers!
 `;
     let context =
@@ -35,7 +33,6 @@ Make it easy to read and exciting for travelers!
 
     let roadtirpPlanner = document.querySelector("#roadtrip-planer");      
     roadtirpPlanner.style.display = "block";
-    roadtripPlanner.innerHTML = "Planning your dream road trip... ⏳";
 
     axios.get(apiUrl).then(displayRoadtripPlan);
 
