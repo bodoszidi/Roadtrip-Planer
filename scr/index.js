@@ -1,7 +1,7 @@
 function displayRoadtripPlan(response) {
     // response.data.anwer
     new Typewriter("#roadtrip-planer", {
-        strings: response.data.answer,
+        strings: response.data.answer.trim(),
         autoStart: true,
         cursor: null,
         delay: 20,
