@@ -15,7 +15,17 @@ function roadtripGenerator(event) {
     let destination = document.querySelector("#destination");
     let duration = document.querySelector("#duration");
     let apiKey = "fbe0f372ad6btocdfb0c2b3e5a4f5432";
-    let prompt = `When given the city (${departure.value}) and the destination (${destination.value}), along with the days (${duration.value}). Create the best road trip plan with some emojies. Include a suggested route with must-see stops and prices with local currency adding the estimated costs in the end of each days. The final output should be a short, less than 15 lines, easy-to-read travel plan that feels fun and inspiring for travelers who want a mix of adventure and relaxation.`;
+   let prompt = `
+Plan a fun and inspiring road trip from ${departure.value} to ${destination.value} lasting ${duration.value} days. 
+Include:
+- Must-see stops along the route 🚗🗺️
+- Local tips and hidden gems 🌟
+- Where to stay overnight 🛌
+- Estimated daily costs with local currency 💰
+- A mix of adventure and relaxation 🏞️🌆
+Use a cheerful tone, include emojis, and keep it short (under 15 lines). 
+Make it easy to read and exciting for travelers!
+`;
     let context =
        "You are a well-traveled road trip organizer with amazing insights and creative travel ideas, by showing ideal places to stay overnight, and local tips."
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
